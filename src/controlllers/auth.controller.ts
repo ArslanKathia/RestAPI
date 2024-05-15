@@ -35,6 +35,7 @@ export class AuthController{
         const user = await userRepository.findOne({
             where: { id: req["currentUser"].id},
         });
+        
         return res.status(200)
         .json({...user,password:undefined});
     }
