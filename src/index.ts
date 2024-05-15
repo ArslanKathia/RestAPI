@@ -6,11 +6,13 @@ import { userRouter } from "./routes/user.routes";
 import { movieRouter} from "./routes/movie.routes"
 import "reflect-metadata";
 import { errorHandler } from "./middleware/errorHandler";
+import helmet from "helmet";
 
 dotenv.config();
 
 const app = express();
 app.use(express.json());
+app.use(helmet());
 app.use(errorHandler);
 
 const { PORT = 3000 } =  process.env;

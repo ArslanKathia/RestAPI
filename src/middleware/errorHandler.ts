@@ -1,4 +1,5 @@
 import { Request,Response,NextFunction } from 'express';
+import { AppStrings } from '../helpers/app-string';
 
 export const errorHandler = (
      error: Error,

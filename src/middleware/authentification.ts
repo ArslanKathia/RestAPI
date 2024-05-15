@@ -1,6 +1,7 @@
 import { NextFunction, Request, Response } from "express";
 import * as dotenv from "dotenv";
 import * as jwt from "jsonwebtoken";
+import { AppStrings } from "../helpers/app-string";
 
 dotenv.config();
 

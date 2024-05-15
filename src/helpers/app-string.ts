@@ -1,4 +1,4 @@
-class AppStrings{
+export class AppStrings{
 
     static readonly UNAUTHORIZED_MSG:string = "Unauthorized";
     static readonly FORBIDDEN_MSG:string = "Forbidden";
