@@ -4,6 +4,9 @@ import { DataSource } from "typeorm";
 import * as dotenv from "dotenv";
 import { User } from "./entity/User.entity";
 import { Movies } from "./entity/Movies.entity";
+import { MembershipUser } from "./entity/MembershipUser";
+import { MembershipFeatures } from "./entity/MembershipFeatures";
+import { MembershipPackage } from "./entity/MembershipPackage";
 
 dotenv.config();
 const { DB_HOST,DB_PORT,DB_USERNME,DB_PASSWORD, DB_DATABASE,NODE_ENV} = process.env
@@ -17,7 +20,7 @@ export const AppDataSource = new DataSource({
     database: DB_DATABASE,
     synchronize:  NODE_ENV === "dev" ? false:false,
     logging: NODE_ENV === "dev" ? false:false,
-    entities: [User,Movies],
+    entities: [User,Movies,MembershipUser,MembershipFeatures,MembershipPackage],
     migrations: [__dirname+"/src/migration/*.ts"],
     subscribers: [],
 })
