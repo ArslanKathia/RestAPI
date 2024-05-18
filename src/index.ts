@@ -7,6 +7,7 @@ import { movieRouter} from "./routes/movie.routes"
 import "reflect-metadata";
 import { errorHandler } from "./middleware/errorHandler";
 import helmet from "helmet";
+import { membershipPackageRouter } from "./routes/membershipPackage.routes";
 
 dotenv.config();
 
@@ -18,6 +19,7 @@ app.use(errorHandler);
 const { PORT = 3000 } =  process.env;
 app.use("/auth",userRouter);
 app.use("/api", movieRouter);
+app.use("/membership",membershipPackageRouter);
 
 app.get("*",(req:Request, res:Response) => {
     res.status(505).json({

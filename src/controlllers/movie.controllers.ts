@@ -7,7 +7,7 @@ export class MovieContoller{
         const data =  cache.get("data");
         if(data){
             console.log("serving from cache");
-            res.status(200).json({
+            return res.status(200).json({
                 data,
             });
         }else{
@@ -46,7 +46,7 @@ export class MovieContoller{
         const movie = await movieRepo.findOne({
             where: {id}
         });
-        res.status(200).json({
+        return res.status(200).json({
             data: movie
         })
     }
@@ -67,7 +67,7 @@ export class MovieContoller{
         movie.cast = cast;
         await movieRepo.save(movie);
 
-        res.status(200).json({
+        return res.status(200).json({
             message: "Movies Updated Successfully", movie
         });
     }
