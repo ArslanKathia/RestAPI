@@ -1,4 +1,4 @@
-import { BaseEntity, Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm"
+import {  Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm"
 import { MembershipPackage } from "./MembershipPackage";
 
 @Entity({ name: "membership_feature"})
@@ -20,7 +20,9 @@ export class MembershipFeatures {
     updatedAt: Date;
 
 
-    @ManyToOne(()=> MembershipPackage, (membershipPackage) => membershipPackage.membershipFeatures)
+    @ManyToOne(()=> MembershipPackage, (membershipPackage) => membershipPackage.membershipFeatures,{
+        onDelete: 'CASCADE'
+   })
     membershipPackage : MembershipPackage;
 
 }

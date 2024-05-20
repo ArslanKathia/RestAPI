@@ -1,4 +1,4 @@
-import { BaseEntity, Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm"
+import { BaseEntity, Column, Entity, OneToMany, PrimaryGeneratedColumn, Tree } from "typeorm"
 import { MembershipUser } from "./MembershipUser";
 import { MembershipFeatures } from "./MembershipFeatures";
 
@@ -34,7 +34,9 @@ export class MembershipPackage {
     membershipUsers : MembershipUser[];
 
 
-    @OneToMany(()=> MembershipFeatures, (membershipFeature) => membershipFeature.membershipPackage)
+    @OneToMany(()=> MembershipFeatures, (membershipFeature) => membershipFeature.membershipPackage,{
+        cascade:true
+    })
     membershipFeatures: MembershipFeatures[];;
 
 }
