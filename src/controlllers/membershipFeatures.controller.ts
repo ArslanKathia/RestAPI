@@ -1,7 +1,6 @@
 import { MembershipFeatures } from './../entity/MembershipFeatures';
 import { Request, Response } from "express";
 import { AppDataSource } from "../data-source";
-import { Tree } from 'typeorm';
 
 export class MembershipFeaturesController{
     static async getMembershipFeatures( req: Request, res: Response){

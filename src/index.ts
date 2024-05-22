@@ -9,6 +9,7 @@ import { errorHandler } from "./middleware/errorHandler";
 import helmet from "helmet";
 import { membershipPackageRouter } from "./routes/membershipPackage.routes";
 import { MembershipFeatureRouter } from "./routes/membershipFeature.routes";
+import { MembershipUserRouter } from "./routes/membershipUser.routes";
 
 dotenv.config();
 
@@ -22,6 +23,7 @@ app.use("/auth",userRouter);
 app.use("/api", movieRouter);
 app.use("/membership",membershipPackageRouter);
 app.use("/package",MembershipFeatureRouter);
+app.use("/ms",MembershipUserRouter);
 
 
 app.get("*",(req:Request, res:Response) => {
