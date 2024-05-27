@@ -6,4 +6,11 @@ export class AppStrings{
     static readonly BAD_REQUEST_MSG:string = "Bad Request";
     static readonly NOT_FOUND_MSG:string = "Not Found";
 
+
+    //AI models
+
+    static readonly OPENGPT_URL = "KingNish/OpenGPT-4o";
+    static readonly MAX_TOKEN = 4906;
+    static readonly REP_PENALTY = 1;
+
 }

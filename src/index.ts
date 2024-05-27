@@ -10,6 +10,7 @@ import helmet from "helmet";
 import { membershipPackageRouter } from "./routes/membershipPackage.routes";
 import { MembershipFeatureRouter } from "./routes/membershipFeature.routes";
 import { MembershipUserRouter } from "./routes/membershipUser.routes";
+import { AIRouter } from "./routes/ai.routes";
 
 dotenv.config();
 
@@ -24,6 +25,8 @@ app.use("/api", movieRouter);
 app.use("/membership",membershipPackageRouter);
 app.use("/package",MembershipFeatureRouter);
 app.use("/ms",MembershipUserRouter);
+//AI
+app.use('/ai',AIRouter);
 
 
 app.get("*",(req:Request, res:Response) => {
