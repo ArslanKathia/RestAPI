@@ -19,6 +19,9 @@ export class User {
     @Column({ default: "users"})
     role: string;
 
+    @Column({nullable: true})
+    profileImage: string; // new field for user profile image
+
     @CreateDateColumn()
     createdAt: Date;
 

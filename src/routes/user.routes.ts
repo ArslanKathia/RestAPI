@@ -25,6 +25,7 @@ Router.get(
 
 Router.post("/signup", UserController.signup);
 Router.post("/login",AuthController.login);
+Router.post("/uploadImage",UserController.uploadProfileImage);
 
 Router.put(
     "/update/:id",
