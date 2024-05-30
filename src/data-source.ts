@@ -7,6 +7,7 @@ import { Movies } from "./entity/Movies.entity";
 import { MembershipUser } from "./entity/MembershipUser";
 import { MembershipFeatures } from "./entity/MembershipFeatures";
 import { MembershipPackage } from "./entity/MembershipPackage";
+import { Book } from "./entity/Book.entity";
 
 dotenv.config();
 const { DB_HOST,DB_PORT,DB_USERNME,DB_PASSWORD, DB_DATABASE,NODE_ENV} = process.env
@@ -20,7 +21,7 @@ export const AppDataSource = new DataSource({
     database: DB_DATABASE,
     synchronize:  NODE_ENV === "dev" ? true:false,
     logging: NODE_ENV === "dev" ? true:false,
-    entities: [User,Movies,MembershipUser,MembershipFeatures,MembershipPackage],
+    entities: [User,Movies,MembershipUser,MembershipFeatures,MembershipPackage,Book],
     migrations: [__dirname+"/src/migration/*.ts"],
     subscribers: [],
 })

@@ -11,6 +11,7 @@ import { membershipPackageRouter } from "./routes/membershipPackage.routes";
 import { MembershipFeatureRouter } from "./routes/membershipFeature.routes";
 import { MembershipUserRouter } from "./routes/membershipUser.routes";
 import { AIRouter } from "./routes/ai.routes";
+import { BookRouter } from "./routes/book.routes";
 
 dotenv.config();
 
@@ -27,6 +28,8 @@ app.use("/package",MembershipFeatureRouter);
 app.use("/ms",MembershipUserRouter);
 //AI
 app.use('/ai',AIRouter);
+//book store
+app.use('/book',BookRouter);
 
 
 app.get("*",(req:Request, res:Response) => {
