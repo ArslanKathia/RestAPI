@@ -12,6 +12,7 @@ import { MembershipFeatureRouter } from "./routes/membershipFeature.routes";
 import { MembershipUserRouter } from "./routes/membershipUser.routes";
 import { AIRouter } from "./routes/ai.routes";
 import { BookRouter } from "./routes/book.routes";
+import { MailRouter } from "./routes/email.routes";
 
 dotenv.config();
 
@@ -30,6 +31,8 @@ app.use("/ms",MembershipUserRouter);
 app.use('/ai',AIRouter);
 //book store
 app.use('/book',BookRouter);
+//mail
+app.use('/mail',MailRouter);
 
 app.get("*",(req:Request, res:Response) => {
     res.status(505).json({
