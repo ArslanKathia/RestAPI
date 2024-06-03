@@ -31,7 +31,6 @@ app.use('/ai',AIRouter);
 //book store
 app.use('/book',BookRouter);
 
-
 app.get("*",(req:Request, res:Response) => {
     res.status(505).json({
         message: "Bad Request - No Route Defined"
