@@ -9,5 +9,8 @@ router.post('/sent',
     //authentification,
     MailController.sendMail
 );
+router.post('/sent-attachment',
+    MailController.sendMail
+);
 
 export { router as MailRouter};
