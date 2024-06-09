@@ -19,6 +19,7 @@
         "@types/memory-cache": "^0.2.5",
         "axios": "^1.7.2",
         "bcrypt": "^5.1.1",
+        "cheerio": "^1.0.0-rc.12",
         "concurrently": "^8.2.2",
         "cors": "^2.8.5",
         "dotenv": "^16.4.5",

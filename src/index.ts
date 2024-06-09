@@ -13,6 +13,7 @@ import { MembershipUserRouter } from "./routes/membershipUser.routes";
 import { AIRouter } from "./routes/ai.routes";
 import { BookRouter } from "./routes/book.routes";
 import { MailRouter } from "./routes/email.routes";
+import { ScrapeRouter } from "./routes/scrape.routes";
 
 dotenv.config();
 
@@ -33,6 +34,8 @@ app.use('/ai',AIRouter);
 app.use('/book',BookRouter);
 //mail
 app.use('/mail',MailRouter);
+//scraping
+app.use('/scrape',ScrapeRouter);
 
 app.get("*",(req:Request, res:Response) => {
     res.status(505).json({
