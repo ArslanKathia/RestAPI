@@ -14,6 +14,7 @@ import { AIRouter } from "./routes/ai.routes";
 import { BookRouter } from "./routes/book.routes";
 import { MailRouter } from "./routes/email.routes";
 import { ScrapeRouter } from "./routes/scrape.routes";
+import { FileRouter } from "./routes/files.router";
 
 dotenv.config();
 
@@ -36,6 +37,8 @@ app.use('/book',BookRouter);
 app.use('/mail',MailRouter);
 //scraping
 app.use('/scrape',ScrapeRouter);
+//files
+app.use('/file',FileRouter);
 
 app.get("*",(req:Request, res:Response) => {
     res.status(505).json({
